@@ -435,4 +435,8 @@ impl EventClient {
             .borrow()
             .send_with_u8_array(message.as_slice())
     }
+
+    pub fn close(&self) -> Result<(), JsValue> {
+        self.connection.borrow().close()
+    }
 }
